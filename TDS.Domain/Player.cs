@@ -7,6 +7,8 @@ namespace TDS.Domain
         public Guid PlayerID { get; set; }
         public string Username { get; set; }
 
-        public virtual Location Location { get; set; }
+        public Level Level { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
     }
 }

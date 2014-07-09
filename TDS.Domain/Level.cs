@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TDS.Domain.Tiles;
 
 namespace TDS.Domain
 {
@@ -11,6 +12,8 @@ namespace TDS.Domain
         public int Width { get; set; }
 
         public ICollection<Tile> Tiles { get; set; }
+
+        public virtual ICollection<Player> Players { get; set; }
 
         public Level()
         {

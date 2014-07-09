@@ -7,47 +7,47 @@ namespace TDS.Logic
     {
         public void MovePlayer(Player player, Direction direction)
         {
-            var previousX = player.Location.X;
-            var previousY = player.Location.Y;
+            var previousX = player.X;
+            var previousY = player.Y;
 
             switch (direction)
             {
                 case Direction.North:
-                    player.Location.Y--;
+                    player.Y--;
                     break;
                 case Direction.NorthEast:
-                    player.Location.Y--;
-                    player.Location.X++;
+                    player.Y--;
+                    player.X++;
                     break;
                 case Direction.East:
-                    player.Location.X++;
+                    player.X++;
                     break;
                 case Direction.SouthEast:
-                    player.Location.Y++;
-                    player.Location.X++;
+                    player.Y++;
+                    player.X++;
                     break;
                 case Direction.South:
-                    player.Location.Y++;
+                    player.Y++;
                     break;
                 case Direction.SouthWest:
-                    player.Location.Y++;
-                    player.Location.X--;
+                    player.Y++;
+                    player.X--;
                     break;
                 case Direction.West:
-                    player.Location.X--;
+                    player.X--;
                     break;
                 case Direction.NorthWest:
-                    player.Location.Y--;
-                    player.Location.X--;
+                    player.Y--;
+                    player.X--;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("direction");
             }
 
-            if (player.Location.X < 0 || player.Location.Y < 0 || player.Location.X >= player.Location.Level.Width || player.Location.Y >= player.Location.Level.Height)
+            if (player.X < 0 || player.Y < 0 || player.X >= player.Level.Width || player.Y >= player.Level.Height)
             {
-                player.Location.X = previousX;
-                player.Location.Y = previousY;
+                player.X = previousX;
+                player.Y = previousY;
 
                 throw new PlayerCantBeMovedException();
             }

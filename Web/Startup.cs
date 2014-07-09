@@ -1,5 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using System.Data.Entity;
+using Microsoft.Owin;
 using Owin;
+using Web.DataAccess;
+using Web.Migrations;
 
 [assembly: OwinStartupAttribute(typeof(Web.Startup))]
 namespace Web

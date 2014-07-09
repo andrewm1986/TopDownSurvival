@@ -25,7 +25,8 @@ namespace TDS.Tests
             MovePlayer(player, direction);
 
             // Assert
-            Assert.That(player.Location, Is.EqualTo(new Location { X = newX, Y = newY, Level = player.Location.Level }));
+            Assert.That(player.X, Is.EqualTo(newX));
+            Assert.That(player.Y, Is.EqualTo(newY));
         }
 
         [TestCase(Direction.North, 0, 0, ExpectedException = typeof(PlayerCantBeMovedException))]
@@ -60,17 +61,14 @@ namespace TDS.Tests
             {
                 PlayerID = Guid.NewGuid(),
                 Username = "TestUser",
-                Location = new Location
+                X = startX,
+                Y = startY,
+                Level = new Level
                 {
-                    X = startX,
-                    Y = startY,
-                    Level = new Level
-                    {
-                        LevelID = Guid.NewGuid(),
-                        Name = "Overworld",
-                        Height = 99,
-                        Width = 99
-                    }
+                    LevelID = Guid.NewGuid(),
+                    Name = "Overworld",
+                    Height = 99,
+                    Width = 99
                 }
             };
 
