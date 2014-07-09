@@ -2,7 +2,7 @@
 {
     public class Location
     {
-        public Level Level { get; set; }
+        public virtual Level Level { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TDS.Domain
 {
@@ -8,6 +9,13 @@ namespace TDS.Domain
         public string Name { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
+
+        public ICollection<Tile> Tiles { get; set; }
+
+        public Level()
+        {
+            Tiles = new HashSet<Tile>();
+        }
 
         public override bool Equals(object obj)
         {
